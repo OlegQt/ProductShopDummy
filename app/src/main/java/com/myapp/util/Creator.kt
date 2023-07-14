@@ -1,15 +1,16 @@
 package com.myapp.util
 
+import com.myapp.data.network.RetrofitNetworkClient
 import com.myapp.data.repository.DummyProductRepositoryImpl
 import com.myapp.domain.repository.DummyProductRepository
 import com.myapp.domain.usecase.LoadAllDummyProductsUseCase
 
 class Creator {
-    private fun getDummyProductsRepository(externalConsumer: DummyProductRepositoryImpl.Consumer):DummyProductRepository{
-        return DummyProductRepositoryImpl(consumer = externalConsumer)
+    private fun getDummyProductsRepository():DummyProductRepository{
+        return DummyProductRepositoryImpl(RetrofitNetworkClient())
     }
 
-    fun provideLoadProductsUseCase(consumer: DummyProductRepositoryImpl.Consumer):LoadAllDummyProductsUseCase{
-        return LoadAllDummyProductsUseCase(getDummyProductsRepository(externalConsumer = consumer))
+    fun provideLoadProductsUseCase():LoadAllDummyProductsUseCase{
+        return LoadAllDummyProductsUseCase(getDummyProductsRepository())
     }
 }
