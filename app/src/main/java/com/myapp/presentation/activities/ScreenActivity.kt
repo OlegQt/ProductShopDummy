@@ -1,4 +1,4 @@
-package com.myapp
+package com.myapp.presentation.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.myapp.R
 import com.myapp.databinding.ActivityMainBinding
 import com.myapp.databinding.ProductItemBinding
 import com.myapp.presentation.viewmodels.ScreenActivityVm
