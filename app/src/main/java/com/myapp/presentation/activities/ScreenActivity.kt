@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.google.android.material.snackbar.Snackbar
 import com.myapp.R
 import com.myapp.databinding.ActivityMainBinding
 import com.myapp.databinding.ProductItemBinding
@@ -34,6 +35,11 @@ class ScreenActivity : AppCompatActivity() {
             productLst.addAll(it)
             productAdapter.notifyDataSetChanged()
         }
+
+        binding.action.setOnClickListener {
+            Snackbar.make(binding.root,"Action",Snackbar.LENGTH_SHORT).show()
+        }
+
 
         // Create adapter
         binding.recyclerProduct.adapter = productAdapter

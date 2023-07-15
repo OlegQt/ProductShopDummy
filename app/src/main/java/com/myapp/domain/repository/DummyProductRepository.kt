@@ -1,7 +1,7 @@
 package com.myapp.domain.repository
 
-import com.myapp.domain.models.DummyProductList
+import com.myapp.domain.models.DummyProduct
 
 interface DummyProductRepository {
-    fun loadDummyProducts(searchParams:String):DummyProductList
+    fun loadDummyProducts(searchParams:String):List<DummyProduct>
 }
